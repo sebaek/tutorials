@@ -3,8 +3,8 @@
 
 <head>
     <style>
-        @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
-        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+        /* @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); */
 
         @font-face {
             font-family: 'Koverwatch';
@@ -18,11 +18,17 @@
         }
 
         body {
-            font-style: italic;
-            font-family: Koverwatch, "궁서", sans-serif;
+            font-size: xx-large;
+            /* font-style: italic;
+            font-family: Koverwatch, "궁서", sans-serif; */
         }
 
-        .koverwatch {
+        @media print {
+            body {
+                font-family: "Koverwatch", sans-serif;
+            }
+        }
+        /* .koverwatch {
             font-style: normal;
             font-family: Koverwatch, "궁서", sans-serif;
         }
@@ -37,6 +43,20 @@
             font-style: normal;
 
             font-family: 'Noto Sans KR', sans-serif;
+        } */
+        /* h1, p {
+            font-size: 1.5em;
+        } */
+
+        #main {
+            text-align: center;
+            line-height: 100%;
+        }
+
+        .title {
+            width: 50%;
+            margin-left: 0;
+            border: 2px solid black;
         }
     </style>
 
@@ -46,21 +66,25 @@
 </head>
 
 <body>
-    <h1>
-        제목 title
-    </h1>
+    <div id='main'>
+        아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.아무문단이요.
+        <h1 class='title'>
+            제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목 title제목
+            title제목 title제목 title제목 title제목 title제목 title제목 title제목 title
+        </h1>
 
-    <p class="koverwatch">
-        문단 류요 와카테 키오쿠라에 hello world.
-    </p>
+        <p class="koverwatch">
+            문단 류요 와카테 키오쿠라에 hello world.
+        </p>
 
-    <p class="hanna">
-        hanna 폰트 사용 예제 류요 와카테 키오쿠라에
-    </p>
+        <p class="hanna">
+            hanna 폰트 사용 예제 류요 와카테 키오쿠라에
+        </p>
 
-    <p class="notosanskr">
-        notosanskr 폰트 사용 예제 류요와카테 키오쿠라에
-    </p>
+        <p class="notosanskr">
+            notosanskr 폰트 사용 예제 류요와카테 키오쿠라에
+        </p>
+    </div>
 </body>
 
 </html>
