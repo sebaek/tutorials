@@ -1,0 +1,27 @@
+
+
+h1, p {
+    color: gray;
+}
+
+h1 {
+    text-align: center;
+    border: 5px dotted black;
+}
+
+.myclass {
+    color: blue;
+}
+
+p.myclass {
+    color: yellow;
+}
+
+.myclass {
+    color: blue;
+}
+
+
+
+
+
