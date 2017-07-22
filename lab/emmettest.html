@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 150px;
+            background-color: #34495e;
+            border-top: 1px solid #bdc3c7;
+        }
+
+        .menu ul li:hover>ul {
+            visibility: visible;
+        }
+
+        .menu ul ul {
+            position: absolute;
+            padding: 0;
+            visibility: hidden;
+            left: 101%;
+            top: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Users</a>
+                <ul>
+                    <li><a href="">Add</a></li>
+                    <li><a href="">Edit</a></li>
+                    <li><a href="">Delete</a></li>
+                </ul>
+            </li>
+            <li><a href="">Web Design</a></li>
+            <li><a href="">Database</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
