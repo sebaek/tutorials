@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>testing</title>
+
+    <style>
+        span.toblock {
+            display: block;
+        }
+
+        .absolute {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>여기는 문단 <span>그냥 인라인</span> 문단이 종료</p>
+    <p>여기는 문단 <span class='toblock'>블럭으로</span> 문단이 종료</p>
+
+    <div class="absolute">
+        absolute div
+    </div>
+</body>
+
+</html>

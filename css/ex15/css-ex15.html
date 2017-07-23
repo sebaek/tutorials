@@ -1,0 +1,238 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout</title>
+</head>
+
+<body>
+    <h1>레이아웃</h1>
+
+    <p>레이아웃과 관련된 속성에 대해서 배워보자</p>
+
+    <h2>display 속성</h2>
+    <p>display 속성은 레이아웃을 제어하는데 중요한 속성이다</p>
+    <p>display 속성은 어떤 요소가 어떻게 배치되야 하는지 결정한다.</p>
+    <p>대부분의 요소는 block 또는 inline 요소이다.</p>
+
+    <h2>블록 레벨 요소</h2>
+    <p>블록 레벨 요소는 항상 새로운 줄에서 시작되고 너비를 지정하지 않으면 가능한 넓게 유지한다.</p>
+    <p>블록 레벨 요소의 예: </p>
+    <ul>
+        <li>div</li>
+        <li>h1 ~ h6</li>
+        <li>p</li>
+    </ul>
+
+    <h2>인라인 요소</h2>
+    <p>인라인 요소는 새로운 줄에서 시작되지 않고 너비는 컨텐트에 맞게 필요한 만큼만 차지한다.</p>
+    <p>인라인 요소의 예: </p>
+    <ul>
+        <li>span</li>
+        <li>a</li>
+        <li>img</li>
+    </ul>
+
+    <h2>기본 display 값 덮어쓰기</h2>
+    <p>각 요소는 기본 display 속성의 값을 가지고 있지만 다른 값으로 덮어 쓸 수 있다.</p>
+
+    <p>li 요소를 inline 요소로 바꾸기</p>
+    <pre><code>
+    li {
+        display: inline;
+    }
+    </code></pre>
+
+    <p>span 요소를 block level 요소로 바꾸기</p>
+    <pre><code>
+    span {
+        display: block;
+    }
+    </code></pre>
+
+    <h2>요소 감추기</h2>
+    <p>요소를 감추는 방법 두 가지에 대해서 알아보자</p>
+    <p><code>display:none;</code>를 사용하면 이 요소가 없는 것과 같아진다.</p>
+    <pre><code>
+    h1.hidden {
+        display: none;
+    }
+    </code></pre>
+
+    <p><code>visibility:hidden;</code>를 사용하면 이 요소는 나타나지 않지만 레이아웃된 공간은 차지 하게된다.</p>
+    <pre><code>
+    h1.hidden {
+        visibility: hidden;
+    }
+    </code></pre>
+
+    <h2>포지션 속성</h2>
+    <p>포지션을 적용하는 속성은 position 이고 주요속성은 아래 4가지이다.</p>
+    <ul>
+        <li>static</li>
+        <li>relative</li>
+        <li>fixed</li>
+        <li>absolute</li>
+    </ul>
+
+    <p>포지션된 요소의 위치를 나타내는 속성은 4가지이다.</p>
+    <ul>
+        <li>top - 위에서 부터 아래로 향하는 거리를 나타낸다.</li>
+        <li>right - 오른쪽에서 왼쪽으로 향하는 거리를 나타낸다.</li>
+        <li>left - 왼쪽에서 오른쪽으로 향하는 거리를 나타낸다.</li>
+        <li>bottom - 아래에서 위로 향하는 거리를 나타낸다.</li>
+    </ul>
+
+    <h3>position: static;</h3>
+    <p>HTML 요소의 기본 포지션 값이다.</p>
+    <p> top, right, left, bottom 속성과 같이 쓰이지 않는다.</p>
+    <pre><code>
+    div.static {
+        position: static;
+        border: 3px solid black;
+    }
+    </code></pre>
+
+
+    <h3>position: relative;</h3>
+    <p>원래 위치해야 할 곳이 기준이된다.</p>
+    <p> top, right, left, bottom 속성으로 기준 위치에서 이동한다.</p>
+
+    <pre><code>
+    div.relative {
+        position: relative;
+        left: 30px;
+        border: 3px solid red;
+    }
+    </code></pre>
+
+    <h3>position: fixed;</h3>
+    <p>viewport를 기준으로하여 위치한다. 즉 스크롤로 페이지위치를 변경해도 fixed 포지션된 요소는 위치가 바뀌지 않는다.</p>
+    <p> top, right, left, bottom 속성으로 기준 위치에서 이동한다.</p>
+
+    <pre><code>
+    div.fixed {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        border: 3px solid yellow;
+    }
+    </code></pre>
+
+
+    <h3>position: absolute;</h3>
+    <p>가장 가까운 포지션된 조상 요소가 기준이 된다.(포지션된 조상 요소는 static 요소를 제외한 요소들이다.)</p>
+    <p>조상 요소중에 포지션된 요소가 없다면 body가 기준이된다.</p>
+
+    <pre><code>
+    div.relative {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        border: 3px solid #73AD21;
+    } 
+
+    div.absolute {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        height: 100px;
+        border: 3px solid #73AD21;
+    }
+    </code></pre>
+
+
+    <h2>겹친 요소</h2>
+    <p>요소가 겹치면 요소의 일부가 보이지 않을 수 있다.</p>
+    <p>z-index 속성을 사용해서 요소가 쌓이는 순서를 변경할 수 있다.</p>
+
+    <pre><code>
+    img {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+    }
+    </code></pre>
+
+
+    <h2>오버 플로우</h2>
+    <p>overflow 속성은 요소의 지정된 크기보다 콘텐트가 클 때 자를 것인지 스크롤바를 넣을 것인지를 결정하는 속성이다.</p>
+    <p>overflow 속성은 다음과 같은 값이 있다.</p>
+
+    <ul>
+        <li>visible - 기본값. 자르지 않고 요소 바깥으로 넘치는 콘텐트를 계속 보여준다.</li>
+        <li>hidden - 넘친 콘텐트를 자르고 보여주지 않는다.</li>
+        <li>scroll - 넘친 콘텐트를 자르고 잘린 콘텐트를 볼 수 있는 스크롤바를 첨가한다. 스크롤바가 필요없어도 첨가한다.</li>
+        <li>auto - 넘친 콘텐트가 잘리면 나머지 콘텐트를 볼 수 있게 스크롤바를 첨가한다.</li>
+    </ul>
+    <pre><code>
+    div.visible {
+        width: 200px;
+        height: 50px;
+        background-color: #eee;
+        overflow: visible;
+    }
+
+    div.hidden {
+        overflow: hidden;
+    }
+
+    div.scroll {
+        overflow: scroll;
+    }
+
+    div.auto {
+        overflow: auto;
+    }
+    </code></pre>
+
+
+    <h2>flaot와 clear</h2>
+    <p>float 는 요소를 띄우도록하는 속성이다.</p>
+    <p>clear 는 떠있는 요소 다음에 오는 요소의 레이아웃을 결정한다.</p>
+
+
+    <h3>float</h3>
+    <p>간단한 사용법으로 이미지를 텍스트로 둘러싸게 하는 사용법이 있다.</p>
+    <p>아래 예제는 텍스트가 오른쪽에 있는 이미지를 감쌀 것이다.</p>
+    <pre><code>
+    img {
+        float: right;
+        margin: 0 0 10px 10px;
+    }
+    </code></pre>
+
+
+    <h3>clear</h3>
+    <p>떠있는 요소 다음에 있는 요소는 떠있는 요소 너머에 배치된다. 이 것을 피하기 위해 clear 속성을 사용한다.</p>
+    <p>아래 예제는 왼쪽에 떠있는 요소 다음에 오는 요소가 떠있는 요소 너머에 배치되지 않도록 한다. </p>
+    <pre><code>
+    div {
+        clear: left;
+    }
+    </code></pre>
+
+    <p>clear 속성의 값은 left, right, both가 있다.</p>
+
+    <h3>떠있는 요소 레이아웃 보기 좋게 정렬하기</h3>
+     <pre><code>
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    </code></pre>   
+
+
+
+
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-body {
+        body {
             line-height: 2;
         }
 
@@ -11,26 +11,16 @@ body {
             font-size: smaller;
         }
 
-        .codebox {
-            font-family: "Courier 10 Pitch", Courier, monospace;
-            font-size: 95%;
-            line-height: 1.4;
-            white-space: pre;
-            white-space: pre-wrap;
-            white-space: -moz-pre-wrap;
-            white-space: -o-pre-wrap;
+        h1, h2, h3, h4, h5, h6 {
+            padding-bottom: 0px;
+            border-bottom: 1px solid gray;
         }
 
-        .codebox code {
+        pre>code {
+            
             display: block;
-            padding: 0.5em 1em;
-            border: 1px solid #bebab0;
-            font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-            font-size: 95%;
-            line-height: 1.4;
-            white-space: pre;
-            white-space: pre-wrap;
-            white-space: -moz-pre-wrap;
-            white-space: -o-pre-wrap;
-            background: #faf8f0;
+            border-left: 5px solid blue;
+            background-color: lightblue;
+            color: DarkSlateGray;
         }
+
