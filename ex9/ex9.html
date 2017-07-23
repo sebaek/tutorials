@@ -1,0 +1,258 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style.css">
+    <title>Form</title>
+</head>
+
+<body>
+    <h1><code>&lt;form&gt;</code> 요소</h1>
+
+    <p>HTML 폼 요소는 사용자에게 값을 입력 받을 때 사용한다.</p>
+
+    <pre><code>
+    &lt;form&gt;
+    ...
+    <i>form elements</i>
+    ...
+    &lt;/form&gt;
+    </code></pre>
+
+    <h2>action 속성</h2>
+
+    <p>action 속성은 폼이 어디로 제출되어야 하는지 정하는 속성이다.</p>
+    <p>보통 폼의 데이타는 submit 버튼을 클릭하면 서버에 있는 웹페이지로 전송된다.</p>
+
+    <pre><code>
+    &lt;form action="/action_page.php"&gt;
+    </code></pre>
+
+    <h2>method 속성</h2>
+
+    <p>method 속성은 HTTP method - 전송방식 (GET 또는 POST)를 결정한다.</p>
+    <p>보통 폼의 데이타는 submit 버튼을 클릭하면 서버에 있는 웹페이지로 전송된다.</p>
+
+    <pre><code>
+    &lt;form action="/action_page.php" method="get"&gt;
+    </code></pre>
+    <pre><code>
+    &lt;form action="/action_page.php" method="post"&gt;
+    </code></pre>
+
+
+    <h2>GET 전송방식</h2>
+
+    <p>GET을 사용하면 전송하는 값이 페이지 주소 필드에 보여진다.</p>
+    <p>민감한 정보를 전송할 때 GET을 사용하지 않는다.</p>
+    <p>전송하는 양의 제한이 있다.</p>
+
+    <h2>POST 전송방식</h2>
+
+    <p>개인정보나 민감한 정보를 전송할 때 항상 POST 방식을 사용한다.</p>
+    <p>페이지 주소 필드에 보여지지 않는다.</p>
+    <p>전송되는 데이터 양에 제한이 없다. 파일 전송등에도 사용된다.</p>
+
+
+
+
+    <h2><code>&lt;input&gt;</code> 요소</h2>
+    <p>type 속성에 따라 입력하는 방법이 결정된다.</p>
+
+
+    <h3>텍스트 입력</h3>
+
+    <p>&lt;input type="text"&gt; 가 텍스트 입력 필드를 만든다.</p>
+
+    <pre><code>
+    &lt;form&gt;
+        First name:&lt;br&gt;
+        &lt;input type="text" name="firstname"&gt;&lt;br&gt;
+        Last name:&lt;br&gt;
+        &lt;input type="text" name="lastname"&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+    <h3>패스워드 입력</h3>
+
+    <p>&lt;input type="password"&gt; 가 패스워드 입력 필드를 만든다.</p>
+
+    <pre><code>
+    &lt;form&gt;
+        User name:&lt;br&gt;
+        &lt;input type="text" name="username"&gt;&lt;br&gt;
+        User password:&lt;br&gt;
+        &lt;input type="password" name="psw"&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+    <h3>제출(submit) 버튼</h3>
+
+    <p>&lt;input type="submit"&gt; 가 제출 버튼을 만든다.</p>
+
+    <pre><code>
+    &lt;form action="/action_page.php"&gt;
+        First name:&lt;br&gt;
+        &lt;input type="text" name="firstname" value="Mickey"&gt;&lt;br&gt;
+        Last name:&lt;br&gt;
+        &lt;input type="text" name="lastname" value="Mouse"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="제출하기"&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+    <h3>초기화(reset) 버튼</h3>
+
+    <p>&lt;input type="reset"&gt; 가 초기화 버튼을 만든다.</p>
+
+    <pre><code>
+    &lt;form action="/action_page.php"&gt;
+        First name:&lt;br&gt;
+        &lt;input type="text" name="firstname" value="Mickey"&gt;&lt;br&gt;
+        Last name:&lt;br&gt;
+        &lt;input type="text" name="lastname" value="Mouse"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Submit"&gt;
+        &lt;input type="reset"&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+
+
+    <h3>라디오 버튼</h3>
+
+    <p>&lt;input type="radio"&gt; 가 라디오 버튼을 만든다.</p>
+
+    <pre><code>
+    &lt;form&gt;
+        &lt;input type="radio" name="gender" value="male" checked&gt; Male&lt;br&gt;
+        &lt;input type="radio" name="gender" value="female"&gt; Female&lt;br&gt;
+        &lt;input type="radio" name="gender" value="other"&gt; Other
+    &lt;/form&gt;
+    </code></pre>
+
+    
+
+    <h3>체크 박스</h3>
+
+    <p>&lt;input type="checkbox"&gt; 가 체크박스를 만든다.</p>
+
+    <pre><code>
+    &lt;form&gt;
+        &lt;input type="checkbox" name="vehicle1" value="Bike"&gt; I have a bike&lt;br&gt;
+        &lt;input type="checkbox" name="vehicle2" value="Car"&gt; I have a car 
+    &lt;/form&gt;
+    </code></pre>
+
+
+
+    <h3>버튼</h3>
+
+    <p>&lt;input type="button"&gt; 가 버튼을 만든다.</p>
+
+    <pre><code>
+    &lt;input type="button" onclick="alert('Hello World!')" value="Click Me!"&gt;
+    </code></pre>
+
+
+
+
+    <h2><code>&lt;select&gt;</code> 요소</h2>
+
+    <p>&lt;select&gt; 는 드롭다운 리스트를 만든다.</p>
+
+    <pre><code>
+    &lt;select name="cars"&gt;
+        &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+        &lt;option value="saab"&gt;Saab&lt;/option&gt;
+        &lt;option value="fiat"&gt;Fiat&lt;/option&gt;
+        &lt;option value="audi"&gt;Audi&lt;/option&gt;
+    &lt;/select&gt;
+    </code></pre>
+
+
+
+    <h2><code>&lt;textarea&gt;</code> 요소</h2>
+
+    <p>&lt;textarea&gt; 는 여러 줄의 텍스트를 입력하는 요소를 만든다.</p>
+
+    <pre><code>
+    &lt;textarea name="message" rows="10" cols="30"&gt;
+       The cat was playing in the garden.
+    &lt;/textarea&gt;
+    </code></pre>
+
+
+    <h2><code>&lt;button&gt;</code> 요소</h2>
+
+    <p>&lt;button&gt; 는 버튼 요소를 만든다.</p>
+
+    <pre><code>
+    &lt;button type="button" onclick="alert('Hello World!')"&gt;Click Me!&lt;/button&gt;
+    </code></pre>
+
+    <h2>input 요소의 속성들</h2>
+
+    <h3>value 속성</h3>
+
+    <p>value 속성은 input요소의 기본 값을 설정한다.</p>
+
+    <pre><code>
+    &lt;form action=""&gt;
+    First name:&lt;br&gt;
+    &lt;input type="text" name="firstname" value="John"&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+    
+
+    <h3>readonly 속성</h3>
+
+    <p>readonly 속성은 읽기만 가능하도록 한다(값 변경 불가).</p>
+
+    <pre><code>
+    &lt;form action=""&gt;
+    First name:&lt;br&gt;
+    &lt;input type="text" name="firstname" value="John" readonly&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+
+    <h3>disabled 속성</h3>
+
+    <p>disabled 속성은 요소를 사용하지 못하도록한다. 값이 전송되지 않는다.</p>
+
+    <pre><code>
+    &lt;form action=""&gt;
+    First name:&lt;br&gt;
+    &lt;input type="text" name="firstname" value="John" disabled&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+
+    <h3>size 속성</h3>
+
+    <p>size 속성은 요소의 크기를 지정한다.</p>
+
+    <pre><code>
+    &lt;form action=""&gt;
+    First name:&lt;br&gt;
+    &lt;input type="text" name="firstname" value="John" size="40"&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+
+    <h3>maxlength 속성</h3>
+
+    <p>maxlength 속성은 요소에 입력하는 값을 제한한다.</p>
+
+    <pre><code>
+    &lt;form action=""&gt;
+    First name:&lt;br&gt;
+    &lt;input type="text" name="firstname" maxlength="10"&gt;
+    &lt;/form&gt;
+    </code></pre>
+
+</body>
+
+</html>
