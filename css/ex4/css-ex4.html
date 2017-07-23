@@ -3,27 +3,32 @@
 
 <head>
     <title>
-        선택자(selector) 설명
+        선택자(selector)
     </title>
-    <link rel='stylesheet' type='text/css' href='style4.css'>
-
 
 </head>
 
 <body>
+<h1>
+    선택자(selecor)
+</h1>
 
-    <h1>
-        제목
-    </h1>
+<p>
+    선택자는 css에서 스타일을 적용하기 원하는 요소를 선택하기 위한 패턴들이다.<br>
+    <a href="https://www.w3schools.com/cssref/css_selectors.asp">선택자 목록</a><br>
+    <a href="https://www.w3schools.com/cssref/trysel.asp">선택자 예시</a>
+</p>
 
-    <p>
-        문단
-    </p>
-
-    <p class='myclass' style="color:red;">
-        myclass의 문단
-    </p>
-
+<h2>선택자 우선순위</h2>
+<p>
+    어떤 요소에 적용 되는 CSS규칙이 중복되면 우선순위가 높은 규칙이 적용된다.
+</p>
+<ul>
+    <li>선택자에 태그명이 있으면 1점</li>
+    <li>선택자에 class가 있으면 10점</li>
+    <li>선택자에 id가 있으면 100점</li>
+</ul>
+<p>이해를 돕기위한 설명으로 태그가 11개라도 class의 우선순위보다 높지 않다.</p>
 
 </body>
 

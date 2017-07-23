@@ -18,3 +18,9 @@
     border: 1px solid red;
     margin: auto;
 }
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}

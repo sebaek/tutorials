@@ -6,32 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>프로젝트</title>
 
-    
-    <link rel="stylesheet" href="style.css">
-
     <style>
         .heading {
-        color : red;
-    }
+            color: red;
+        }
+
+        .flexcontainer {
+            position : relative;
+            background-color: gray;
+            display: flex;
+        }
+
+        .flexcontainer > div {
+            flex : 1;
+        }
+
+        .innerbox1 {
+            background-color: blue;
+            float: left;
+            position: relative;
+
+            
+
+             top : 30px; 
+
+        }
+        
+        .innerbox2 {
+            background-color: red;
+        }
+
+        .innerbox3 {
+            background-color: yellow;
+        }
     </style>
-    
+
 </head>
 
 <body>
 
-    <div class="container">
-        <h1 class="heading">제목 </h1>
+
+    <form action="http://starbuzzcoffee.com/processorder.php" method="post">
+        <input type="text" name='namea'><br>
+        <input type="text" name='address'><br>
+        <input type="submit" value="받으시오">
+    </form>
+
+    <div class='flexcontainer'>
+        <div class="innerbox1">1번</div>
+        <div class="innerbox2">2번</div>
+        <div class="innerbox3">3번</div>
     </div>
-
-    <div class="container">
-        <div class="center"><p>center div</p></div>
-    </div>
-
-    <div class="container">
-        <p>center paragraph</p>
-    </div>
-
-
 </body>
 
 </html>

@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seoul Cinema</title>
+
+    <style>
+        body, div, p, img {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .header {
+            display: flex;
+            text-align: center;
+            width: 900px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: lightblue;
+            background-image: url('img/prj2/cinema.jpg');
+            background-size: 100%;
+        }
+
+        .header>h1 {
+            margin: auto;
+        }
+
+        .main {
+            width: 900px;
+            margin: 30px auto;
+            display: flex;
+        }
+        .movie {
+            flex: 1;
+        }
+ 
+        .movie>img {
+            width: 300px;
+            height: 445px;
+        }
+        
+        .movie>.reply {
+            width: 300px;
+            text-align: center;
+            background-color: #222222;
+            color: white;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0.5;
+        }
+
+        .movie:hover>.reply {
+            visibility: visible;
+        }
+
+        .footer {
+            margin: auto;
+            width: 900px;
+            background-color: lightblue;
+        }
+
+        .footer>p {
+            text-align: center;
+            margin: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class='header'>
+        <h1>SEOUL CINEMA</h1>
+    </div>
+
+
+    <div class='main'>
+
+        <div class='movie'>
+            <div class='reply'>
+                <p>2017년 5월 8일</p>
+            </div>
+            <img src="img/prj2/spiderman.jpg" alt="스파이더맨 포스터">
+        </div>
+        <div class='movie'>
+            <div class='reply'>
+                <p>2017년 7월 21일</p>
+            </div>
+            <img src="img/prj2/dunkirk.jpg" alt="덩케르크 포스터">
+        </div>
+        <div class='movie'>
+            <div class='reply'>
+                <p>2017년 1월 9일</p>
+            </div>
+            <img src="img/prj2/wonderwoman.jpg" alt="원더우먼 포스터">
+        </div>
+    </div>
+
+    <div class='footer'>
+        <p>SEOUL CINEMA</p>
+    </div>
+
+</body>
+
+</html>

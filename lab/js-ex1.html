@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js</title>
+
+</head>
+
+<ul id='items'>
+    <li>계란</li>
+    <li>사과</li>
+    <li>바나나</li>
+</ul>
+
+<body>
+    <script>
+        setTimeout(where, 5000);
+
+        function where() {
+            var list = document.getElementById('items');
+
+            list.innerHTML = list.innerHTML + "<li>올 때 마트에서</li>";
+        }
+    </script>
+</body>
+
+</html>

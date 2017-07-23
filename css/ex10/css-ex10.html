@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Border</title>
+</head>
+<body>
+    <h1>테두리 꾸미기</h1>
+    <p>border로 시작하는 프로퍼티로 테두리를 꾸밀 수 있다.
+    </p>
+
+    <h2>테두리 스타일</h2>
+    <p>border-sytle 로 테두리의 모양을 지정한다. </p>
+    <p>값의 종류들</p>
+    <ul>
+        <li>dotted</li>
+        <li>dashed</li>
+        <li>solid</li>
+        <li>couble</li>
+        <li>groove</li>
+        <li>ridge</li>
+        <li>inset</li>
+        <li>outset</li>
+        <li>none</li>
+        <li>hidden</li>
+    </ul>
+    <pre class='codebox'>
+    예시 :
+    <code>
+    p.dotted {border-style: dotted;}
+    p.dashed {border-style: dashed;}
+    p.solid {border-style: solid;}
+    p.double {border-style: double;}
+    p.groove {border-style: groove;}
+    p.ridge {border-style: ridge;}
+    p.inset {border-style: inset;}
+    p.outset {border-style: outset;}
+    p.none {border-style: none;}
+    p.hidden {border-style: hidden;}
+    p.mix {border-style: dotted dashed solid double;}
+
+    </code>
+    </pre>
+
+    <h2>테두리 폭</h2>
+    <p>border-width 로 테두리의 폭을 지정한다.</p>
+
+    <pre class='codebox'>
+    예시 :
+    <code>
+    p.one {
+        border-style: solid;
+        border-width: 5px;
+    }
+    p.three {
+        border-style: solid;
+        border-width: 2px 10px 4px 20px;
+    }
+
+    </code>
+    </pre>
+
+    <h2>테두리 색</h2>
+    <p>border-color 로 테두리의 색을 지정한다.</p>
+
+    <pre class='codebox'>
+    예시 :
+    <code>
+    p.one {
+        border-style: solid;
+        border-color: red;
+    }
+
+    p.two {
+        border-style: solid;
+        border-color: green;
+    }
+
+    </code>
+    </pre>
+
+
+    <h2>테두리 각 면의 스타일 지정</h2>
+    <p>border-top-, border-right-, border-bottom-, border-left- 로 테두리의 각 면의 스타일을 지정한다.</p>
+
+
+    <pre class='codebox'>
+    예시 :
+    <code>
+    p {
+        border-top-style: dotted;
+        border-right-style: solid;
+        border-bottom-style: dotted;
+        border-left-style: solid;
+    }
+
+    </code>
+    </pre>
+
+    <h2>약칭으로 테두리 스타일 지정</h2>
+    <p>border 로 테두리의 폭, 모양, 색을 한번에 지정한다.</p>
+
+
+    <pre class='codebox'>
+    예시 :
+    p {
+        border: 5px solid red;
+    }
+
+    </code>
+    </pre>
+
+</body>
+</html>

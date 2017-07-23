@@ -1,0 +1,36 @@
+body {
+            line-height: 2;
+        }
+
+        .small-caps {
+            font-variant: small-caps;
+        }
+
+        .comment {
+            color: gray;
+            font-size: smaller;
+        }
+
+        .codebox {
+            font-family: "Courier 10 Pitch", Courier, monospace;
+            font-size: 95%;
+            line-height: 1.4;
+            white-space: pre;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+        }
+
+        .codebox code {
+            display: block;
+            padding: 0.5em 1em;
+            border: 1px solid #bebab0;
+            font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+            font-size: 95%;
+            line-height: 1.4;
+            white-space: pre;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            background: #faf8f0;
+        }
