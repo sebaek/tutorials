@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous"> -->
+
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous"> -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <div class="w3-container">
+        <h1>JavaScript HTML DOM</h1>
+        <p>HTML DOM과 함께 JavaScript는 HTML 문서의 모든 요소에 접근하고 변경할 수 있다.</p>
+        <h2>HTML DOM(Document Object Model)</h2>
+        <p>페이지가 로드되면 브라우저는 페이지의 Document Object Model을 만든다.</p>
+        <p>HTML DOM은 Obejct들의 나무 모양으로 구성된다.</p>
+
+        <div class="w3-card-4">
+            <div class="w3-container">
+                <h3>The HTML DOM Tree of Objects</h3>
+            </div>
+
+            <img src="pic_htmltree.gif" alt="HTML DOM">
+
+        </div>
+
+        <p>객체 모델과 함께 JavaScript는 동적 HTML을 만드는 모든 능력을 갖는다.</p>
+        <ul>
+            <li>페이지의 모든 HTML 요소를 변경할 수 있다.</li>
+            <li>페이지의 모든 HTML 속성을 변경할 수 있다.</li>
+            <li>페이지의 모든 CSS 스타일을 변경할 수 있다.</li>
+            <li>존재하는 HTML 요소와 속성을 제거할 수 있다.</li>
+            <li>새로운 HTML 요소와 속성을 만들어 첨가할 수 있다.</li>
+            <li>페이지에 존재하는 모든 HTML 이벤트에 반응하여 동작할 수 있다.</li>
+            <li>페이지에 새로운 HTML 이벤트를 만들 수 있다.</li>
+        </ul>
+
+        <h2>앞으로 배울 내용</h2>
+        <ol>
+            <li>요소의 컨텐트를 어떻게 바꿀 것인가.</li>
+            <li>HTML요소의 스타일(CSS)를 어떻게 바꿀 것인가.</li>
+            <li>HTML DOM 이벤트를 활용하는 방법</li>
+            <li>HTML요소를 어떻게 첨가하고 제거할 것인가</li>
+        </ol>
+
+        <h2>HTML DOM이란 무엇인가?</h2>
+
+        <p>HTML DOM은 HTML을 위한 프로그래밍 인터페이스와 표준 객체 모델이다.</p>
+        <ul>
+            <li>객체로서의 HTML 요소</li>
+            <li>HTML요소의 속성들(properties)</li>
+            <li>모든 HTML요소에 접근하는 메소드</li>
+            <li>모든 HTML요소를 위한 이벤트</li>
+        </ul>
+
+        <p>즉 HTML DOM은 HTML 요소를 어떻게 찾아내고 바꾸고 첨가하고 지우는 방법에 대한 표준이다.</p>
+
+        <hr>
+        <h1>HTML DOM 메소드</h1>
+        <p>HTML DOM 메소드는 우리가 HTML 요소를 제어하는 기능이다.</p>
+        <p>HTML DOM 속성은 우리가 바꿀 수 있는 HTML 요소의 값이다.</p>
+
+        <h2>DOM 프로그래밍 인터페이스</h2>
+        <p>DOM에서 모든 HTML요소는 객체로 정의된다.</p>
+        <p>프로그래밍 인터페이스는 각 객체의 메소드와 속성이다.</p>
+        <p>프로퍼티는 우리가 읽거나 변경할 수 있는 요소의 값이다.</p>
+        <p>메소드는 우리가 HTML 요소를 제어할 수 있는 기능이다.</p>
+
+        <h2>예제</h2>
+        <div class="w3-code htmlHigh">
+            &lt;html&gt;<br> &lt;body&gt; <br>
+            <br> &lt;p id="demo"&gt;&lt;/p&gt;<br>
+            <br> &lt;script&gt; <br> document.getElementById("demo").innerHTML = "Hello World!";<br> &lt;/script&gt; <br>
+            <br> &lt;/body&gt; <br> &lt;/html&gt; <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_method" class="w3-button w3-green" target="_blank">직접 해보기</a>
+        <h2><code class='w3-codespan'>getElementById</code> 메소드</h2>
+        <p>HTML 요소의 참조를 얻는 방법 중 많이 쓰이는 것이 요소의 id를 사용하는 방법이다.</p>
+        <p>위의 예제는 <code class='w3-codespan'>getElementById</code> 메소드를 사용하여 id가 demo인 요소를 찾았다. </p>
+
+        <h2><code class='w3-codespan'>innerHTML</code> 속성</h2>
+        <p>요소의 컨텐트를 얻는 가장 쉬운 방법은 <code class='w3-codespan'>innerHTML</code>속성을 사용하는 것이다.</p>
+        <p><code class='w3-codespan'>innerHTML</code> 속성은 HTML요소의 컨텐트를 얻거나 바꾸는데 유용하다.</p>
+        <hr>
+        <h1>JavaScript HTML DOM Document</h1>
+        <p>HTML DOM document 객체는 웹 페이지에 있는 모든 다른 객체를 가지고 있다.</p>
+
+        <h2>HTML DOM Document Object</h2>
+        <p>document 객체는 우리의 웹페이지 그 자체이다.</p>
+        <p>만약 우리가 HTML 페이지 안에 어떤 요소에 접근하길 원한다면 항상 document 객체에 먼저 접근해야만 한다.</p>
+        <p>document 객체를 사용해서 HTML을 접근하고 조작하는 예제가 아래에 있다.</p>
+
+        <h2>HTML 요소 찾기</h2>
+        <table class="w3-table-all">
+            <tr>
+                <th>방법</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>document.getElemetById(<i>id</i>)</td>
+                <td>요소의 id를 통해서 요소를 찾는다.</td>
+            </tr>
+            <tr>
+                <td>document.getElementsByTagName(<i>name</i>)</td>
+                <td>태그 이름을 사용해서 요소들을 찾는다.</td>
+            </tr>
+            <tr>
+                <td>document.getElementsByClassName(<i>name</i>)</td>
+                <td>클래스 이름을 사용해서 요소들을 찾는다.</td>
+            </tr>
+        </table>
+
+        <h2>HTML 요소들 변경하기 </h2>
+        <table class="w3-table-all">
+            <tr>
+                <th>방법</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td><i>element.innerHTML =  새 html 컨텐트</i></td>
+                <td>요소의 내부 HTML을 바꾼다.</td>
+            </tr>
+            <tr>
+                <td><i>element.attribute = 새 값</i></td>
+                <td>HTML 요소의 attribute값을 바꾼다.</td>
+            </tr>
+            <tr>
+                <td><i>element.setAttribute(attribute, value)</i></td>
+                <td>HTML 요소의 attribute값을 바꾼다.</td>
+            </tr>
+            <tr>
+                <td><i>element.style.property = 새 스타일</i></td>
+                <td>HTML 요소의 스타일을 바꾼다.</td>
+            </tr>
+        </table>
+
+        <h2>HTML 요소 첨가하거나 제거하기 </h2>
+        <table class="w3-table-all">
+            <tr>
+                <th>방법</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>document.createElement(<i>element</i>)</td>
+                <td>HTML 요소를 생성한다.</td>
+            </tr>
+            <tr>
+                <td>document.removeChild(<i>element</i>)</td>
+                <td>HTML 요소를 제거한다.</td>
+            </tr>
+            <tr>
+                <td>document.appendChild(<i>element</i>)</td>
+                <td>HTML 요소를 첨가한다.</td>
+            </tr>
+            <tr>
+                <td>document.replaceChild(<i>element</i>)</td>
+                <td>HTML 요소를 교체한다.</td>
+            </tr>
+            <tr>
+                <td>document.write(<i>text</i>)</td>
+                <td>HTML 출력 스트림으로 덮어쓴다.</td>
+            </tr>
+        </table>
+
+        <h2>이벤트 핸들러 첨가하기 </h2>
+        <table class="w3-table-all">
+            <tr>
+                <th>방법</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>document.getElementById(<i>id</i`>).onclick = function(){<i>code</i>}</td>
+                <td>HTML 요소를 생성한다.</td>
+            </tr>
+        </table>
+
+        <h2>HTML 객체 찾기 </h2>
+        <table class="w3-table-all">
+            <tr>
+                <th>속성</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>document.anchors</td>
+                <td>name 속성을 갖는 모든 a 요소를 반환한다.</td>
+            </tr>
+
+            <tr>
+                <td>document.body</td>
+                <td>body 요소를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>document.cookie</td>
+                <td>문서의 쿠키를 반환한다.</td>
+            </tr>
+
+            <tr>
+                <td>document.documentElement</td>
+                <td>html 요소를 반환한다.</td>
+            </tr>
+
+            <tr>
+                <td>document.forms</td>
+                <td>모든 form 요소들을 반환한다.</td>
+            </tr>
+            <tr>
+                <td>document.head</td>
+                <td>head 요소를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>document.images</td>
+                <td>모든 img 요소를 반환한다.</td>
+            </tr>
+
+
+            <tr>
+                <td>document.links</td>
+                <td>href 속성이 있는 모든 area, a 요소를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>document.readyState</td>
+                <td>문서의 로딩 상태를 반환한다.</td>
+            </tr>
+
+            <tr>
+                <td>document.scripts</td>
+                <td>문서의 script 요소를 반환한다.</td>
+            </tr>
+
+            <tr>
+                <td>document.title</td>
+                <td>문서의 title 요소를 반환한다.</td>
+            </tr>
+            <tr>
+                <td>document.URL</td>
+                <td>문서의 URL을 반환한다.</td>
+            </tr>
+        </table>
+
+
+
+        <h1>JavaScript HTML DOM 요소</h1>
+
+        <h2>HTML 요소 찾기</h2>
+        <p>HTML 요소를 조작하기 위해서는 먼저 그 요소를 찾아야 한다.</p>
+        <p>찾는 방법들:</p>
+        <ul>
+            <li>id로 찾기</li>
+            <li>태그명으로 찾기</li>
+            <li>클래스 명으로 찾기</li>
+            <li>CSS 셀렉터로 찾기</li>
+            <li>HTML 객체 콜렉션으로 찾기</li>
+        </ul>
+
+        <h2>id로 HTML 요소 찾기</h2>
+        <p>요소의 id를 통해서 찾는 방법이며, DOM에서 HTML 요소를 찾는 가장 쉬운 방법이다.</p>
+        <p>아래 예제는 id가 intro인 요소를 찾는 법을 보여준다.</p>
+        <div class="w3-code jsHigh">
+            var myElement = document.getElementById("intro");<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_getelementbyid" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <p>만약 요소를 찾는다면 이 메소드는 그 요소를 객체로서 전달해 준다. (myElement 안에)</p>
+        <p>만약 요소를 찾지 못하면 myElement는 null이된다.</p>
+
+
+        <h2>태그명으로 HTML 요소 찾기</h2>
+        <p>아래 예제는 모든 p 요소를 찾는 법을 보여준다.</p>
+        <div class="w3-code jsHigh">
+            var x = document.getElementsByTagName("p");<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_getelementsbytagname2" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <p>이 예제는 id가 main 요소를 찾고, 그 요소 내의 모든 &lt;p&gt; 요소를 찾는 방법이다. </p>
+        <div class="w3-code jsHigh">
+            var x = document.getElementById("main");<br> var y = x.getElementsByTagName("p");<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_getelementsbytagname" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>클래스 명으로 HTML 요소 찾기</h2>
+        <p>만약 같은 클래스 명을 가진 모든 HTML 요소를 찾으러면 getElementsByClasName()을 사용한다.</p>
+        <p>이 예제는 클래스명이 'intro'인 모든 요소를 반환한다.</p>
+        <div class="w3-code jsHigh">
+            var x = document.getElementsByClassName("intro");<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_getelementsbyclassname" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <h2>CSS 선택자(Selector)로 HTML 요소 찾기</h2>
+        <p>만약 CSS선택자에 매칭되는 모든 HTML 요소를 찾으려면 querySelectorAll()메소드를 사용한다.</p>
+        <p>이 예제는 클래스명이 'intro'인 모든 p 요소를 반환한다.</p>
+        <div class="w3-code jsHigh">
+            var x = document.querySelectorAll("p.intro");<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_queryselectorall" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+
+        <h2>HTML 객체 콜렉션으로 HTML 요소 찾기</h2>
+        <p>아래 예제는 id가 'frm1'인 폼 요소를 찾고 찾은 폼 콜렉션 내의 모든 요소의 value를 화면에 표시해주는 예제이다.</p>
+        <p>이 예제는 클래스명이 'intro'인 모든 p 요소를 반환한다.</p>
+        <div class="w3-code jsHigh">
+            var&nbsp;x&nbsp;=&nbsp;document.forms["frm1"];<br> var&nbsp;text&nbsp;=&nbsp;"";
+            <br> var&nbsp;i;
+            <br> for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;x.length;&nbsp;i++)&nbsp;{
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;+=&nbsp;x.elements[i].value&nbsp;+&nbsp;"&lt;br&gt;";
+            <br> }
+            <br> document.getElementById("demo").innerHTML&nbsp;=&nbsp;text;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_queryselectorall" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <h2>HTML 콘텐트 변경하기</h2>
+        <p>innerHTML을 사용해서 HTML 요소의 콘텐트를 변경하는 가장 쉬운 방법이다.</p>
+        <p>다음과 같은 문법을 사용한다.</p>
+        <div class="w3-code jsHigh">
+            document.getElementById(<i>id</i>).innerHTML = <i>new HTML</i>
+        </div>
+        <p>아래 예제는 특정 p 요소의 콘텐트를 변경하는 예제이다</p>
+        <div class="w3-code jsHigh">
+            &lt;html&gt;<br> &lt;body&gt;
+            <br>
+            <br> &lt;p&nbsp;id="p1"&gt;Hello&nbsp;World!&lt;/p&gt;
+            <br>
+            <br> &lt;script&gt;
+            <br> document.getElementById("p1").innerHTML&nbsp;=&nbsp;"New&nbsp;text!";
+            <br> &lt;/script&gt;
+            <br>
+            <br> &lt;/body&gt;
+            <br> &lt;/html&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_change_innerhtml" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <p>아래 예제는 특정 h1 요소의 콘텐트를 변경하는 예제이다</p>
+        <div class="w3-code jsHigh">
+            &lt;!DOCTYPE&nbsp;html&gt;<br> &lt;html&gt;
+            <br> &lt;body&gt;
+            <br>
+            <br> &lt;h1&nbsp;id="id01"&gt;Old&nbsp;Heading&lt;/h1&gt;
+            <br>
+            <br> &lt;script&gt;
+            <br> var&nbsp;element&nbsp;=&nbsp;document.getElementById("id01");
+            <br> element.innerHTML&nbsp;=&nbsp;"New&nbsp;Heading";
+            <br> &lt;/script&gt;
+            <br>
+            <br> &lt;/body&gt;
+            <br> &lt;/html&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_innerhtml" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <h2>어떤 속성의 값을 변경하기</h2>
+        <p>어떤 HTML 속성을 변경하기 위해 다음과 같은 문법을 사용한다.</p>
+
+        <div class="w3-code jsHigh">
+            document.getElementById(<i>id</i>).<i>attribute</i> = <i>new value</i>
+        </div>
+        <p>아래 예제는 어떤 img 요소의 src 속성의 값을 변경하는 예제이다.</p>
+        <div class="w3-code jsHigh">
+            &lt;!DOCTYPE&nbsp;html&gt;<br> &lt;html&gt;
+            <br> &lt;body&gt;
+            <br>
+            <br> &lt;img&nbsp;id="myImage"&nbsp;src="smiley.gif"&gt;
+            <br>
+            <br> &lt;script&gt;
+            <br> document.getElementById("myImage").src&nbsp;=&nbsp;"landscape.jpg";
+            <br> &lt;/script&gt;
+            <br>
+            <br> &lt;/body&gt;
+            <br> &lt;/html&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_image" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>HTML 스타일 변경하기</h2>
+        <p>HTML 스타일을 변경하기 위해 다음과 같은 문법을 사용한다.</p>
+
+        <div class="w3-code jsHigh">
+            document.getElementById(<i>id</i>).style.<i>property</i> = <i>new style</i>
+        </div>
+        <p>아래 예제는 어느 p 요소의 스타일을 변경하는 예제이다.</p>
+        <div class="w3-code jsHigh">
+            &lt;html&gt;<br> &lt;body&gt;
+            <br>
+            <br> &lt;p&nbsp;id="p2"&gt;Hello&nbsp;World!&lt;/p&gt;
+            <br>
+            <br> &lt;script&gt;
+            <br> document.getElementById("p2").style.color&nbsp;=&nbsp;"blue";
+            <br> &lt;/script&gt;
+            <br>
+            <br> &lt;p&gt;The&nbsp;paragraph&nbsp;above&nbsp;was&nbsp;changed&nbsp;by&nbsp;a&nbsp;script.&lt;/p&gt;
+            <br>
+            <br> &lt;/body&gt;
+            <br> &lt;/html&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_change_style" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>이벤트 사용하기</h2>
+        <p>HTML DOM은 어떤 이벤트가 발생했을 때 코드를 실행 시킬 수 있게 한다.</p>
+
+        <p>이벤트는 HTML 요소에 '어떤일이 발생할 때' 브라우저에 의해서 생성된다:</p>
+        <ul>
+            <li>어떤 요소가 클릭 됐을 때</li>
+            <li>페이지가 로드 됐을 때</li>
+            <li>input 필드가 변경됐을 때</li>
+        </ul>
+
+        <div class="w3-code jsHigh">
+            document.getElementById(<i>id</i>).style.<i>property</i> = <i>new style</i>
+        </div>
+        <p>이 예제는 사용자가 버튼을 클릭했을 때 id가 'id1'인 요소의 스타일을 바꾸는 예제이다.</p>
+        <div class="w3-code jsHigh">
+            &lt;!DOCTYPE&nbsp;html&gt;<br> &lt;html&gt;
+            <br> &lt;body&gt;
+            <br>
+            <br> &lt;h1&nbsp;id="id1"&gt;My&nbsp;Heading&nbsp;1&lt;/h1&gt;
+            <br>
+            <br> &lt;button&nbsp;type="button"&nbsp;
+            <br> onclick="document.getElementById('id1').style.color&nbsp;=&nbsp;'red'"&gt;
+            <br> Click&nbsp;Me!&lt;/button&gt;
+            <br>
+            <br> &lt;/body&gt;
+            <br> &lt;/html&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_color2" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_visibility" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <h2>이벤트에 반응하기</h2>
+        <p>JavaScript는 사용자가 HTML 요소를 클릭하는 등의 이벤트가 발생했을 때 실행될 수 있다.</p>
+        <p>사용자가 어떤 요소를 클릭했을 때 실행시키기 위해서 JavaScript 코드를 HTML 이벤트 속성에 넣어준다:</p>
+
+        <div class="w3-code jsHigh">
+            onclick=<i>JavaScript</i>
+        </div>
+
+        <p>HTML 이벤트의 예:</p>
+        <ul>
+            <li>사용자가 마우스를 클릭했을 때</li>
+            <li>웹 페이지의 로딩이 완료 됐을 때</li>
+            <li>이미지의 로딩이 완료 됐을 때</li>
+            <li>요소위로 마우스가 움직였을 때</li>
+            <li>input 필드가 변경됐을 때</li>
+            <li>HTML 폼이 제출 됐을 때</li>
+            <li>사용자가 키를 눌렀을 때</li>
+        </ul>
+        <p>아래 예제는 사용자가 h1요소를 클릭했을 때 h1요소의 컨텐트가 바뀌는 예제이다.</p>
+        <div class="w3-code jsHigh">
+            &lt;!DOCTYPE&nbsp;html&gt;<br> &lt;html&gt;
+            <br> &lt;body&gt;
+            <br>
+            <br> &lt;h1&nbsp;onclick="this.innerHTML&nbsp;=&nbsp;'Ooops!'"&gt;Click&nbsp;on&nbsp;this&nbsp;text!&lt;/h1&gt;
+            <br>
+            <br> &lt;/body&gt;
+            <br> &lt;/html&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onclick2" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <p>아래 예제는 사용자가 h1요소를 클릭했을 때 h1요소의 컨텐트가 바뀌는 예제이다.</p>
+        <div class="w3-code jsHigh">
+            &lt;!DOCTYPE&nbsp;html&gt;<br> &lt;html&gt;
+            <br> &lt;body&gt;
+            <br>
+            <br> &lt;h1&nbsp;onclick="changeText(this)"&gt;Click&nbsp;on&nbsp;this&nbsp;text!&lt;/h1&gt;
+            <br>
+            <br> &lt;script&gt;
+            <br> function&nbsp;changeText(id)&nbsp;{&nbsp;
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;id.innerHTML&nbsp;=&nbsp;"Ooops!";
+            <br> }
+            <br> &lt;/script&gt;
+            <br>
+            <br> &lt;/body&gt;
+            <br> &lt;/html&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onclick3" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <h2>HTML 이벤트 속성</h2>
+        <p>HTML 요소에서 이벤트를 사용하기 위해 event 속성에 지정한다.</p>
+        <p>아래 예제에서 사용자가 버튼을 클릭했을 때 displayDate 함수가 실행될 것이다.</p>
+        <div class="w3-code jsHigh">
+            &lt;button&nbsp;onclick="displayDate()"&gt;Try&nbsp;it&lt;/button&gt;<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_events1" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>HTML DOM을 사용해서 이벤트 사용하기</h2>
+        <p>HTML DOM은 HTML 요소에 JavaScript를 사용하여 이벤트를 활용할 수 있게 한다.</p>
+        <p>onclick 이벤트를 버튼 요소에 지정하는 예제:</p>
+        <div class="w3-code jsHigh">
+            &lt;script&gt;<br> document.getElementById("myBtn").onclick&nbsp;=&nbsp;displayDate;
+            <br> &lt;/script&gt;
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_events2" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <p>위 예제는 사용자가 id='myBtn'인 요소를 클릭할 때 displayDate라는 함수를 실행되도록 지정되었다.</p>
+
+        <h2>onchange 이벤트</h2>
+
+        <p>아래 예제는 onchange이벤트를 어떻게 사용하는 보여준다. upperCase() 함수가 input 필드의 내용을 변경하면 호출 된다.</p>
+        <div class="w3-code jsHigh">
+            &lt;input&nbsp;type="text"&nbsp;id="fname"&nbsp;onchange="upperCase()"&gt;<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_onchange" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>onmouseover, onmouseout 이벤트</h2>
+
+        <p>onmouseover와 onmouseout이벤트는 사용자가 마우스를 요소위로 올리거나 요소 밖으로 벗어났을 때 발생된다.</p>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_events_mouseover" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>onmousedown, onmouseup, onclick 이벤트</h2>
+        <p>onmousedown, onmouseup, onclick 이벤트는 모두 마우스 클릭중의 하나의 동작이다. 마우스를 클릭하면 onmousedown 이벤트가 최초로 발생되고 마우스 버튼을 떼면 onmouseup
+            이벤트가 발생하고 마지막으로 마우스클릭이 완료되면 onclick이벤트가 발생된다.</p>
+
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_events_mousedown" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onmousedown" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onload" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onfocus" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onmouse" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/exercise.asp?filename=exercise_dom_events1" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/exercise.asp?filename=exercise_dom_events2" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <a href="https://www.w3schools.com/js/exercise.asp?filename=exercise_dom_events3" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>addEventListener() 메소드</h2>
+
+        <p>이벤트 리스터를 추가하는 예제</p>
+        <div class="w3-code jsHigh">
+            document.getElementById("myBtn").addEventListener("click",&nbsp;displayDate);<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_displaydate" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <p>addEventListener() 메소드는 특정 요소에 이벤트 핸들러를 첨가한다.</p>
+        <p>addEventListener() 메소드는 기존에 존재하는 이벤트 핸들러를 덮어쓰지 않고 추가 할 수 있다.</p>
+        <p>하나의 요소에 여러 이벤트 핸들러를 첨가할 수 있다.</p>
+        <p>같은 이벤트에 해당하는 핸들러를 여러개 추가할 수 있다.</p>
+        <p>removeEventListener()로 이벤트 리스너를 제거할 수 있다.</p>
+
+        <h2>문법</h2>
+
+        <div class="w3-code jsHigh">
+            <i>element</i>.addEventListener(<i>event, function, useCapture</i>);
+        </div>
+
+        <p>첫번째 파라미터는 이벤트의 타입이다.(click이나 mousedown 같은)</p>
+        <p>두번째 파라미터는 이벤트가 발생했을 때 실행되어야하는 함수이다.</p>
+        <p>세번째 파라미터는 boolean값이며 파라미터에 값을 넣거나 넣지 않아도 된다. 이벤트 버블링을 할 지 이벤트 캡쳐링을 할지 결정한다.</p>
+        <p>이벤트를 입력할 때 'on'을 빼고 입력한다. 즉 'onclick'대신 'click'를 입력한다.</p>
+
+        <h2>이벤트 핸들러를 요소에 추가하기</h2>
+        <p>사용자가 클릭했을 때 'Hello World!'라고 경고창 띄우기</p>
+        <div class="w3-code jsHigh">
+            <i>element</i>.addEventListener("click",&nbsp;function(){&nbsp;alert("Hello&nbsp;World!");&nbsp;});<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_add" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <p>요소내에 함수를 정의 하지 않고 이름을 정한 외부의 함수를 사용할 수 있다.</p>
+
+        <div class="w3-code jsHigh">
+            element.addEventListener("click",&nbsp;myFunction);<br>
+            <br> function&nbsp;myFunction()&nbsp;{
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;alert&nbsp;("Hello&nbsp;World!");
+            <br> }
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_add2" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>여러 이벤트 핸들러를 같은 요소에 첨가하기</h2>
+        <p>addEventistener() 메소드는 같은 요소에 여러 이벤트 핸들러를 넣을 수 있게한다. 기존에 있는 것에 덮어쓰지 않는다.</p>
+        <div class="w3-code jsHigh">
+            element.addEventListener("click",&nbsp;myFunction);<br> element.addEventListener("click",&nbsp;mySecondFunction);
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_add_many" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <p>서로 다른 타입의 이벤트를 같은 요소에 첨가하기</p>
+        <div class="w3-code jsHigh">
+            element.addEventListener("mouseover",&nbsp;myFunction);<br> element.addEventListener("click",&nbsp;mySecondFunction);
+            <br> element.addEventListener("mouseout",&nbsp;myThirdFunction);
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_add_many" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+        <h2>window 객체에 이벤트 핸들러 넣기</h2>
+        <div class="w3-code jsHigh">
+            window.addEventListener("resize",&nbsp;function(){<br> &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("demo").innerHTML&nbsp;=&nbsp;sometext;
+            <br> });
+            <br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_dom" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+        <h2>파라미터 전달하기</h2>
+        <p>파라미터를 전달하기 위해 '무명 함수'를 사용했다.</p>
+        <div class="w3-code jsHigh">
+            element.addEventListener("click",&nbsp;function(){&nbsp;myFunction(p1,&nbsp;p2);&nbsp;});<br>
+        </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_parameters" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+        <h2>removeEventListener() 메소드</h2>
+        <p>removeEventListener() 메소드는 addEventListener()메소드로 첨가되어있는 이벤트 핸들러를 제거 할 때 사용한다.</p>
+        <div class="w3-code jsHigh">
+            element.removeEventListener("mousemove",&nbsp;myFunction);<br> </div>
+        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_remove" class="w3-button w3-green" target="_blank">직접 해보기</a><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

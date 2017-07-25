@@ -1,29 +1,38 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>encode</title>
 </head>
+
 <body>
-    <textarea name="origin" id="originText" cols="300" rows="15"></textarea>
+    <textarea id="originText" cols="120" rows="15"></textarea><br>
     <input type="button" onclick="encode()" value='encode'>
-    
+
     <br>
 
-    <textarea name="target" id="targetText" cols="300" rows="15"></textarea>
+    <textarea id="targetText" cols="120" rows="15"></textarea>
+
+    <br>
+    <textarea id="targetTextWithBr" cols="120" rows="15"></textarea>
+
 
     <script>
-    function encode() {
-        var originTextAreaElement = document.getElementById('originText');
-        var originText = originTextAreaElement.value;
+        document.getElementById('originText').onchange = encode;
+        function encode() {
+            var originTextAreaElement = document.getElementById('originText');
+            var originText = originTextAreaElement.value;
 
-        targetText = originText.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        var targetTextAreaElement = document.getElementById('targetText');
-        targetTextAreaElement.value = targetText;
+            targetText = originText.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            var targetTextAreaElement = document.getElementById('targetText');
+            targetTextAreaElement.value = targetText;
 
-    }
-
+            var targetTextWithBrElement = document.getElementById('targetTextWithBr');
+            targetTextWithBrElement.value = targetText.replace(/[\n\r]/g, '<br>\n').replace(/ /g, '&nbsp;') + '<br>';
+        }
     </script>
 </body>
+
 </html>
