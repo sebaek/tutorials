@@ -47,6 +47,9 @@
 </head>
 
 <body>
+    <div class='w3-panel w3-cyan'>
+        <h1 id='name-card' style='text-align: center;'>_</h1>
+    </div>
     <div class="container">
         <div class="tab">
             <div class="row">
@@ -228,9 +231,7 @@
         <button id='go-button' class="w3-button w3-jumbo w3-lime w3-center">GO</button>
         <button id='stop-button' class="w3-button w3-jumbo w3-red w3-center">STOP</button>
     </div>
-    <div class='w3-panel w3-cyan'>
-        <h1 id='name-card' style='text-align: center;'>_</h1>
-    </div>
+    
 
     <script>
         $(document).ready(function () {
@@ -263,11 +264,15 @@
                 nameNumber = getAndDeleteNext(nameNumbers);
                 $("#name-card").text(names[nameNumber]);
                 intervalFn = setInterval(function () {
-                    if (sitNumbers.size == 0) return;
+
                     var sitnum = getNext(sitNumbers);
                     // console.log($('#name-' + sitnum).text());
 
                     $('#name-' + sitnum + '>h1').text(names[nameNumber]).parent().addClass('w3-blue').animate({ "color": "black" }, 90, function () {
+                        if (sitNumbers.size == 0) {
+                            $("#go-button").attr('disabled', true);
+                            return;
+                        }
                         $(this).animate({ "color": "black" }, 10).removeClass('w3-blue');
                         $('#name-' + sitnum + '>h1').text("_");
                         console.log('change');
@@ -286,7 +291,10 @@
                     $('#name-' + sitnum + '>h1').text(names[nameNumber]).parent().addClass('w3-blue');
                     console.log(sitNumbers.size + " " + nameNumbers.size);
                 }, 200);
-                
+                if (sitNumbers.size == 0) {
+                    $("#go-button").attr('disabled', true);
+                    return;
+                }
             }
 
 
