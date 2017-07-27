@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container .inner {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+    }
+
+    .inner {
+        position: absolute;
+        top: 0;
+        background-color: gray;
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <div class="inner" id="div-1">
+            <h1>트와이스</h1>
+        </div>
+        <div class="inner" id="div-2">
+            <h1>레드벨벳</h1>
+        </div>
+        <div class="inner" id="div-3">
+            <h1>김국진</h1>
+        </div>
+    </div>
+    <div class="div"><button id='btn1'>누구?</button></div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.inner').hide('slow');
+
+
+            $('#btn1').click(function () {
+                var randomNumber = Math.floor(Math.random() * 3) + 1;
+
+                $('#div-' + randomNumber).show('slow');
+
+                // alert('hi');
+
+
+
+
+
+
+            });
+
+
+
+
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>
