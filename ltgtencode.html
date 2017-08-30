@@ -31,6 +31,8 @@
 
             var targetTextWithBrElement = document.getElementById('targetTextWithBr');
             targetTextWithBrElement.value = targetText.replace(/[\n\r]/g, '<br>\n').replace(/ /g, '&nbsp;') + '<br>';
+            targetTextWithBrElement.select();
+            document.execCommand('copy');
         }
     </script>
 </body>
